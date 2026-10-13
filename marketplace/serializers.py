@@ -36,6 +36,7 @@ class PedidoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pedido
         fields = ['id', 'comprador', 'status', 'criado_em', 'itens']
+        read_only_fields = ['comprador']
 
     def create(self, validated_data):
         itens_data = validated_data.pop('itens')
